@@ -60,7 +60,7 @@ let loadVueApp = () => {
                 this.weaponModal.titanWeaponAtt = titanWeaponAtt;
 
                 if(this.weapons[titan.type]){
-                    this.weaponModal.weapons = this.weapons[titan.type][weaponType];
+                    this.weaponModal.weapons = {...this.weapons[titan.type][weaponType]};
                     $('#weaponModal').modal('toggle');
                 }
             },
