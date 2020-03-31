@@ -27,7 +27,9 @@
                     <div class="col-2">
                         <h2>Titans</h2>
                         <div class="list-group">
-                            <a href="#" v-for="titan in titans" v-on:click="addTitan(titan)" class="list-group-item list-group-item-action">{{ titan.name + " (" + titan.cost + " pts)" }}</a>
+                            <a href="#" v-for="titan in titans" v-on:click="addTitan(titan)" class="list-group-item list-group-item-action">
+                                {{ titan.name + " (" + titan.cost + " pts)" }}
+                            </a>
                         </div>
                     </div>
                     <div class="col-8">
@@ -54,15 +56,20 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col">Left Arm</div>
-                                    <div class="col">Carapace</div>
-                                    <div class="col">Right Arm</div>
+                                    <div class="col"><h6>Left Arm</h6></div>
+                                    <div class="col"><h6>Carapace</h6></div>
+                                    <div class="col"><h6>Right Arm</h6></div>
+                                </div>
+                                <div class="row">
+                                    <div v-if="titan.leftArm" class="col">{{ titan.leftArm.name + " (" + titan.leftArm.cost + " pts)" }}</div>
+                                    <div v-if="titan.carapace" class="col">{{ titan.carapace.name + " (" + titan.carapace.cost + " pts)" }}</div>
+                                    <div v-if="titan.rightArm" class="col">{{ titan.rightArm.name + " (" + titan.rightArm.cost + " pts)" }}</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-2">
-                        <h2>Total {{ total }} pts</h2>
+                        <h2 style="text-align: center;">Total {{ total }} pts</h2>
                     </div>
                 </div>
             </div>
