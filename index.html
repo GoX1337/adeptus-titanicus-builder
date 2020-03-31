@@ -41,7 +41,16 @@
                                         <h5>{{ titan.name + " (" + titan.cost + " pts)" }}</h5>
                                     </div>
                                     <div class="col-1">
-                                        <a v-on:click="removeTitan(index, titan)">
+                                        <a href="#" v-on:click="moveTopTitan(index, titan)" data-toggle="tooltip" data-placement="top" title="Move top">
+                                            <img src="/assets/chevron-up.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                        </a>
+                                        <a href="#" v-on:click="moveDownTitan(index, titan)" data-toggle="tooltip" data-placement="top" title="Move down">
+                                            <img src="/assets/chevron-down.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                        </a>
+                                        <a href="#" v-on:click="cloneTitan(index, titan)" data-toggle="tooltip" data-placement="top" title="Duplicate">
+                                            <img src="/assets/files.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                        </a>
+                                        <a href="#" v-on:click="removeTitan(index, titan)" data-toggle="tooltip" data-placement="top" title="Delete">
                                             <img src="/assets/x-circle-fill.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
                                         </a>
                                     </div>
