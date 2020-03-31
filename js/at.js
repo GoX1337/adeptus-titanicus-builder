@@ -23,7 +23,7 @@ let loadVueApp = () => {
         },
         methods: {
             addTitan: function (titan) {
-                this.armyList.push(titan);
+                this.armyList.push({...titan});
                 this.total += titan.cost;
             },
             removeTitan: function (index, titan) {
@@ -65,17 +65,35 @@ let loadVueApp = () => {
                 }
             },
             chooseWeapon: function (weapon) {
+                this.total += weapon.cost;
                 this.weaponModal.weapons = [];
                 this.weaponModal.title = "";
                 let titan = this.armyList[this.weaponModal.titanIndex];
                 titan[this.weaponModal.titanWeaponAtt] = weapon;
-
-                console.log(titan);
-
                 this.armyList.splice(this.weaponModal.titanIndex, 1, titan);
                 this.weaponModal.titanIndex = -1;
                 this.weaponModal.weaponAtt = "";
                 $('#weaponModal').modal('toggle');
+            },
+            getTotalTitanCost: function (titan) {
+                let total = titan.cost;
+                if(titan.rightArm){
+                    total += titan.rightArm.cost;
+                }
+                if(titan.carapace){
+                    total += titan.carapace.cost;
+                }
+                if(titan.leftArm){
+                    total += titan.leftArm.cost;
+                }
+                return total;
+            },
+            removeWeapon: function (index, titanWeaponAtt) {
+                let titan = this.armyList[index];
+                this.total -= titan[titanWeaponAtt].cost;
+                titan[titanWeaponAtt] = null;
+                this.armyList.splice(index, 1, titan);
+                tooltipDispose();
             }
         },
         updated: function () {

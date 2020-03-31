@@ -38,7 +38,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-11">
-                                        <h5>{{ titan.name + " (" + titan.cost + " pts)" }}</h5>
+                                        <h5>{{ titan.name + " (" + getTotalTitanCost(titan) + " pts)" }}</h5>
                                     </div>
                                     <div class="col-1">
                                         <a href="#" v-on:click="moveTopTitan(index, titan)" data-toggle="tooltip" data-placement="top" title="Move top">
@@ -62,21 +62,36 @@
                                 </div>
                                 <div class="row">
                                     <div class="col" style="text-align: center;">
-                                        <span v-if="titan.leftArm" >{{ titan.leftArm.name + " (" + titan.leftArm.cost + " pts)" }}</span>
+                                        <div v-if="titan.leftArm" >
+                                            {{ titan.leftArm.name + " (" + titan.leftArm.cost + " pts)" }}
+                                            <a href="#" v-on:click="removeWeapon(index, 'leftArm')" data-toggle="tooltip" data-placement="top" title="Remove weapon">
+                                                <img style="margin-top:1.5%;" src="/assets/x-circle.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                            </a>
+                                        </div>
                                         <a v-if="!titan.leftArm" href="#" v-on:click="openWeaponModal(index, titan, 'arm', 'leftArm', 'Left Arm')" data-toggle="tooltip" data-placement="top" title="Add weapon">
-                                            <img src="/assets/plus.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                            <img style="margin-top:1.5%;" src="/assets/plus.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
                                         </a>
                                     </div>
                                     <div class="col" style="text-align: center;">
-                                        <span v-if="titan.carapace">{{ titan.carapace.name + " (" + titan.carapace.cost + " pts)" }}</span>
+                                        <div v-if="titan.carapace">
+                                            {{ titan.carapace.name + " (" + titan.carapace.cost + " pts)" }}
+                                            <a href="#" v-on:click="removeWeapon(index, 'carapace')" data-toggle="tooltip" data-placement="top" title="Remove weapon">
+                                                <img style="margin-top:1.5%;" style="margin-top:1.5%;" src="/assets/x-circle.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                            </a>
+                                        </div>
                                         <a v-if="!titan.carapace" href="#" v-on:click="openWeaponModal(index, titan, 'carapace', 'carapace', 'Carapace')" data-toggle="tooltip" data-placement="top" title="Add weapon">
-                                            <img src="/assets/plus.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                            <img style="margin-top:1.5%;" src="/assets/plus.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
                                         </a>
                                     </div>
                                     <div class="col" style="text-align: center;">
-                                        <span v-if="titan.rightArm">{{ titan.rightArm.name + " (" + titan.rightArm.cost + " pts)" }}</span>
+                                        <div v-if="titan.rightArm">
+                                            {{ titan.rightArm.name + " (" + titan.rightArm.cost + " pts)" }}
+                                            <a href="#" v-on:click="removeWeapon(index, 'rightArm')" data-toggle="tooltip" data-placement="top" title="Remove weapon">
+                                                <img style="margin-top:1.5%;" style="margin-top:1.5%;" src="/assets/x-circle.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                            </a>
+                                        </div>
                                         <a v-if="!titan.rightArm" href="#" v-on:click="openWeaponModal(index, titan, 'arm', 'rightArm', 'Right Arm')" data-toggle="tooltip" data-placement="top" title="Add weapon">
-                                            <img src="/assets/plus.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                            <img style="margin-top:1.5%;" src="/assets/plus.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
                                         </a>
                                     </div>
                                 </div>
