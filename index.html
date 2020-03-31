@@ -16,7 +16,7 @@
 </head>
     <body>
         <div id="app">
-            <nav class="navbar navbar-dark bg-dark">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a class="navbar-brand" href="#">
                     <img src="/assets/at.png" width="30" height="30" class="d-inline-block align-top" alt=""/>
                     Adeptus Titanicus Army list builder
@@ -26,10 +26,8 @@
                 <div class="row">
                     <div class="col-2">
                         <h2>Titans</h2>
-                        <div class="btn-group-vertical">
-                            <button v-for="titan in titans" v-on:click="addTitan(titan)" class="btn btn-dark">
-                                {{ titan.name + " (" + titan.cost + " pts)" }}
-                            </button>
+                        <div class="list-group">
+                            <a href="#" v-for="titan in titans" v-on:click="addTitan(titan)" class="list-group-item list-group-item-action">{{ titan.name + " (" + titan.cost + " pts)" }}</a>
                         </div>
                     </div>
                     <div class="col-8">
