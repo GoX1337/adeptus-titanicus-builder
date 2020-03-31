@@ -56,14 +56,29 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col"><h6>Left Arm</h6></div>
-                                    <div class="col"><h6>Carapace</h6></div>
-                                    <div class="col"><h6>Right Arm</h6></div>
+                                    <div class="col"><h6 style="text-align: center;">Left Arm</h6></div>
+                                    <div class="col"><h6 style="text-align: center;">Carapace</h6></div>
+                                    <div class="col"><h6 style="text-align: center;">Right Arm</h6></div>
                                 </div>
                                 <div class="row">
-                                    <div v-if="titan.leftArm" class="col">{{ titan.leftArm.name + " (" + titan.leftArm.cost + " pts)" }}</div>
-                                    <div v-if="titan.carapace" class="col">{{ titan.carapace.name + " (" + titan.carapace.cost + " pts)" }}</div>
-                                    <div v-if="titan.rightArm" class="col">{{ titan.rightArm.name + " (" + titan.rightArm.cost + " pts)" }}</div>
+                                    <div class="col" style="text-align: center;">
+                                        <span v-if="titan.leftArm" >{{ titan.leftArm.name + " (" + titan.leftArm.cost + " pts)" }}</span>
+                                        <a v-if="!titan.leftArm" href="#" v-on:click="openWeaponModal(index, titan, 'arm', 'leftArm', 'Left Arm')" data-toggle="tooltip" data-placement="top" title="Add weapon">
+                                            <img src="/assets/plus.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                        </a>
+                                    </div>
+                                    <div class="col" style="text-align: center;">
+                                        <span v-if="titan.carapace">{{ titan.carapace.name + " (" + titan.carapace.cost + " pts)" }}</span>
+                                        <a v-if="!titan.carapace" href="#" v-on:click="openWeaponModal(index, titan, 'carapace', 'carapace', 'Carapace')" data-toggle="tooltip" data-placement="top" title="Add weapon">
+                                            <img src="/assets/plus.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                        </a>
+                                    </div>
+                                    <div class="col" style="text-align: center;">
+                                        <span v-if="titan.rightArm">{{ titan.rightArm.name + " (" + titan.rightArm.cost + " pts)" }}</span>
+                                        <a v-if="!titan.rightArm" href="#" v-on:click="openWeaponModal(index, titan, 'arm', 'rightArm', 'Right Arm')" data-toggle="tooltip" data-placement="top" title="Add weapon">
+                                            <img src="/assets/plus.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -72,6 +87,27 @@
                         <h2 style="text-align: center;">Total {{ total }} pts</h2>
                     </div>
                 </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="weaponModal" tabindex="-1" role="dialog" aria-labelledby="weaponModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="weaponModalLabel">{{ weaponModal.title }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group">
+                        <a href="#" v-for="weapon in weaponModal.weapons" v-on:click="chooseWeapon(weapon)" class="list-group-item list-group-item-action">
+                            {{ weapon.name + " (" + weapon.cost + " pts)" }}
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
             </div>
         </div>
     </body>
