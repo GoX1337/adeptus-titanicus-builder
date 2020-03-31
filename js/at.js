@@ -50,7 +50,7 @@ let loadVueApp = () => {
                 $('[data-toggle="tooltip"]').tooltip();
             },
             cloneTitan: function (index, titan) {
-                this.armyList.splice(index + 1, 0, titan);
+                this.armyList.splice(index + 1, 0, {...titan});
                 this.total += titan.cost;
                 tooltipDispose();
             },
