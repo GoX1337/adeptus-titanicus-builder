@@ -2,10 +2,97 @@ const weapons = {
     warlord: {
         arm: [
             {
-                name: "Plasma Blastgun",
+                name: "Arioch Titan Power Claw",
+                type: "Arm",
+                cost: 25
+            },
+            {
+                name: "Belicosa Volcano Cannon",
+                type: "Arm",
+                cost: 55
+            },
+            {
+                name: "Macro-gatling Blaster",
                 type: "Arm",
                 cost: 30
             },
+            {
+                name: "Mori Quake Cannon",
+                type: "Arm",
+                cost: 20
+            },
+            {
+                name: "Sunfury Plasma Annihilator",
+                type: "Arm",
+                cost: 45
+            }
+        ],
+        carapace: [
+            {
+                name: "Apocalypse Missile Launchers",
+                type: "Carapace",
+                cost: 15
+            },
+            {
+                name: "Paired Gatling Blasters",
+                type: "Carapace",
+                cost: 30
+            },
+            {
+                name: "Paired Laser Blasters",
+                type: "Carapace",
+                cost: 50
+            },
+            {
+                name: "Paired Turbo Laser Destructors",
+                type: "Carapace",
+                cost: 35
+            },
+            {
+                name: "Vulcan Mega-bolter Array",
+                type: "Carapace",
+                cost: 20
+            }
+        ]   
+    },
+    warlord_nemesis: {
+        arm: [
+            {
+                name: "Gatling Blaster",
+                type: "Arm",
+                cost: 15
+            },
+            {
+                name: "Laser Blaster",
+                type: "Arm",
+                cost: 25
+            },
+            {
+                name: "Melta Cannon",
+                type: "Arm",
+                cost: 35
+            },
+            {
+                name: "Volcano Cannon",
+                type: "Arm",
+                cost: 25
+            }
+        ],
+        carapace: [
+            {
+                name: "Bellicosa Volcano Cannon",
+                type: "Carapace",
+                cost: 55
+            },
+            {
+                name: "Mori Quake Cannon",
+                type: "Carapace",
+                cost: 20
+            }
+        ]   
+    },
+    warlord_sinister: {
+        arm: [
             {
                 name: "Arioch Titan Power Claw",
                 type: "Arm",
@@ -57,7 +144,7 @@ const weapons = {
                 name: "Vulcan Mega-bolter Array",
                 type: "Carapace",
                 cost: 20
-            },
+            }
         ]   
     },
     reaver: {
@@ -134,6 +221,21 @@ const weapons = {
                 name: "Vulcain Mega-bolter",
                 type: "Arm",
                 cost: 10
+            },
+            {
+                name: "Natrix Shock Lance",
+                type: "Arm",
+                cost: 20
+            },
+            {
+                name: "Plasma Blast Gun",
+                type: "Arm",
+                cost: 30
+            },
+            {
+                name: "Ursaw Claw",
+                type: "Arm",
+                cost: 10
             }
         ]
     }
@@ -141,9 +243,25 @@ const weapons = {
 
 const titans = [
     {
+        name: "Warlord-Sinister",
+        type: "warlord_sinister",
+        cost: 685,
+        rightArm: null,
+        leftArm: null,
+        carapace: null
+    },
+    {
         name: "Warlord",
         type: "warlord",
         cost: 385,
+        rightArm: null,
+        leftArm: null,
+        carapace: null
+    },
+    {
+        name: "Warlord Nemesis",
+        type: "warlord_nemesis",
+        cost: 325,
         rightArm: null,
         leftArm: null,
         carapace: null
@@ -162,29 +280,29 @@ const titans = [
         cost: 180,
         rightArm: null,
         leftArm: null
+    }
+];
+
+const banners = [
+    {
+        name: "Acastus Knight",
+        type: "acastus_knight",
+        cost: 150,
+        rightArm: null,
+        leftArm: null
     },
     {
         name: "Cerastus Knight",
-        type: "cerastus",
+        type: "cerastus_knight",
         cost: 130,
-        banner: true,
         rightArm: null,
         leftArm: null
     },
     {
         name: "Questoris Knight",
-        type: "questoris",
+        type: "questoris_knight",
         cost: 120,
-        banner: true,
-        rightArm: null,
-        leftArm: null
-    },
-    {
-        name: "Acastus Knight",
-        type: "acastus",
-        cost: 80,
-        banner: true,
         rightArm: null,
         leftArm: null
     }
-];
+]

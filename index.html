@@ -4,6 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.ico"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Adeptus Titanicus army builder</title>
@@ -24,7 +25,7 @@
             </nav>
             <div class="container-fluid" style="margin-top:2%;">
                 <div class="row">
-                    <div class="col-2">
+                    <div class="col-sm-2">
                         <h2>Titans</h2>
                         <div class="list-group">
                             <a href="#" v-for="titan in titans" v-on:click="addTitan(titan)" class="list-group-item list-group-item-action">
@@ -32,15 +33,15 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-md-8">
                         <h2>List</h2>
                         <div v-for="(titan, index) in armyList" class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-11">
+                                    <div class="col-md-10">
                                         <h5>{{ titan.name + " (" + getTotalTitanCost(titan) + " pts)" }}</h5>
                                     </div>
-                                    <div class="col-1">
+                                    <div class="col-md-2">
                                         <a href="#" v-on:click="moveTopTitan(index, titan)" data-toggle="tooltip" data-placement="top" title="Move top">
                                             <img src="/assets/chevron-up.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
                                         </a>
@@ -98,7 +99,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-2">
+                    <div class="col-sm-2">
                         <h2 style="text-align: center;">Total {{ total }} pts</h2>
                     </div>
                 </div>
