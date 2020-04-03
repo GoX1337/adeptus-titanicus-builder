@@ -7,6 +7,7 @@ let tooltipDispose = () => {
 }
 
 let loadVueApp = () => {
+
     let app = new Vue({
         el: '#app',
         data: {
@@ -14,6 +15,7 @@ let loadVueApp = () => {
             armyList: [],
             weapons: weapons,
             titans: titans,
+            banners: banners,
             weaponModal: {
                 titanIndex: -1,
                 title: "",
