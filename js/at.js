@@ -29,32 +29,32 @@ let loadVueApp = () => {
                 this.armyList.push({...item});
                 this.total += item.cost;
             },
-            removeTitan: function (index, titan) {
+            removeItem: function (index, item) {
                 this.armyList.splice(index, 1);
-                this.total -= titan.cost;
+                this.total -= item.cost;
                 tooltipDispose();
             },
-            moveTopTitan: function (index, titan) {
+            moveTopItem: function (index, item) {
                 if(index > 0){
-                    let topTitan = this.armyList[index - 1];
-                    this.armyList.splice(index - 1, 1, titan);
-                    this.armyList.splice(index, 1, topTitan);
+                    let topItem = this.armyList[index - 1];
+                    this.armyList.splice(index - 1, 1, item);
+                    this.armyList.splice(index, 1, topItem);
                     tooltipDispose();
                 }
                 $('[data-toggle="tooltip"]').tooltip();
             },
-            moveDownTitan: function (index, titan) {
+            moveDownItem: function (index, item) {
                 if(index < this.armyList.length - 1){
-                    let botTitan = this.armyList[index + 1];
-                    this.armyList.splice(index + 1, 1, titan);
-                    this.armyList.splice(index, 1, botTitan);
+                    let botItem = this.armyList[index + 1];
+                    this.armyList.splice(index + 1, 1, item);
+                    this.armyList.splice(index, 1, botItem);
                     tooltipDispose();
                 }
                 $('[data-toggle="tooltip"]').tooltip();
             },
-            cloneTitan: function (index, titan) {
-                this.armyList.splice(index + 1, 0, {...titan});
-                this.total += titan.cost;
+            cloneItem: function (index, item) {
+                this.armyList.splice(index + 1, 0, {...item});
+                this.total += item.cost;
                 tooltipDispose();
             },
             openWeaponModal: function (index, titan, weaponType, titanWeaponAtt, modalTitle) {
@@ -98,6 +98,9 @@ let loadVueApp = () => {
                 this.armyList.splice(index, 1, titan);
                 tooltipDispose();
             },
+            isTitan: function(item){
+                return item.type && ["warlord_sinister", "warlord", "warlord_nemesis", "reaver", "warhound"].includes(item.type);
+            }
         },
         updated: function () {
             this.$nextTick(function () {
