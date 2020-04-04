@@ -191,13 +191,11 @@ const weapons = {
                 type: "Carapace",
                 cost: 10
             },
-            ,
             {
                 name: "Vulcain Mega-bolter",
                 type: "Carapace",
                 cost: 10
             },
-            ,
             {
                 name: "Warp Missible Support Rack",
                 type: "Carapace",
@@ -365,3 +363,10 @@ const maniples = [
         cost: 610
     }
 ];
+
+export default {
+    weapons,
+    titans,
+    banners,
+    maniples
+}
