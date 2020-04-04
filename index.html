@@ -27,30 +27,43 @@
                 <div class="row">
                     <div class="col-sm-2">
                         <div class="list-group">
-                            <a style="color:black;" class="list-group-item" data-toggle="collapse" href="#titanCollapse" role="button" aria-expanded="false" aria-controls="titanCollapse">
-                                <h3>Titans</h3>
-                            </a>
+
+                            <div class="list-group-item">
+                                <a class="d-flex flex-row" style="color:black;text-decoration: none;" data-toggle="collapse" href="#titanCollapse" role="button" aria-expanded="false" aria-controls="titanCollapse">
+                                    <h3>Titans</h3>
+                                    <img style="margin-left:auto; margin-top: 5%; margin-right: 1%;" src="/assets/chevron-right.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                </a>
+                            </div>
                             <div id="titanCollapse" class="list-group collapse">
                                 <a href="#" v-for="titan in titans" v-on:click="addItem(titan)" class="list-group-item list-group-item-action">
                                     {{ titan.name + " (" + titan.cost + " pts)" }}
                                 </a>
                             </div>
-                            <a style="color:black;" class="list-group-item" data-toggle="collapse" href="#bannerCollapse" role="button" aria-expanded="false" aria-controls="bannerCollapse">
-                                <h3>Banners</h3>
-                            </a>
+
+                            <div class="list-group-item">
+                                <a class="d-flex flex-row" style="color:black;text-decoration: none;" data-toggle="collapse" href="#bannerCollapse" role="button" aria-expanded="false" aria-controls="bannerCollapse">
+                                    <h3>Banners</h3>
+                                    <img style="margin-left:auto; margin-top: 5%; margin-right: 1%;" src="/assets/chevron-right.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                </a>
+                            </div>
                             <div id="bannerCollapse" class="list-group collapse">
                                 <a href="#" v-for="banner in banners" v-on:click="addItem(banner)" class="list-group-item list-group-item-action">
                                     {{ banner.name + " (" + banner.cost + " pts)" }}
                                 </a>
                             </div>
-                            <a style="color:black;" class="list-group-item" data-toggle="collapse" href="#manipleCollapse" role="button" aria-expanded="false" aria-controls="manipleCollapse">
-                                <h3>Maniples</h3>
-                            </a>
+
+                            <div class="list-group-item">
+                                <a class="d-flex flex-row" style="color:black;text-decoration: none;" data-toggle="collapse" href="#manipleCollapse" role="button" aria-expanded="false" aria-controls="manipleCollapse">
+                                    <h3>Maniples</h3>
+                                    <img style="margin-left:auto; margin-top: 5%; margin-right: 1%;" src="/assets/chevron-right.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
+                                </a>
+                            </div>
                             <div id="manipleCollapse" class="list-group collapse">
                                 <a href="#" v-for="maniple in maniples" v-on:click="addItem(maniple)" class="list-group-item list-group-item-action">
                                     {{ maniple.name + " (" + maniple.cost + " pts)" }}
                                 </a>
                             </div>
+
                         </div>
                     </div>
                     <div class="col-md-8">
