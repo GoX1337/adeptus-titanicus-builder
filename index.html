@@ -26,13 +26,12 @@
             <div class="container-fluid" style="margin-top:2%;">
                 <div class="row">
                     <div class="col-sm-2">
-
                         <div class="list-group">
                             <a style="color:black;" class="list-group-item" data-toggle="collapse" href="#titanCollapse" role="button" aria-expanded="false" aria-controls="titanCollapse">
                                 <h3>Titans</h3>
                             </a>
                             <div id="titanCollapse" class="list-group collapse">
-                                <a href="#" v-for="titan in titans" v-on:click="addTitan(titan)" class="list-group-item list-group-item-action">
+                                <a href="#" v-for="titan in titans" v-on:click="addItem(titan)" class="list-group-item list-group-item-action">
                                     {{ titan.name + " (" + titan.cost + " pts)" }}
                                 </a>
                             </div>
@@ -40,7 +39,7 @@
                                 <h3>Banners</h3>
                             </a>
                             <div id="bannerCollapse" class="list-group collapse">
-                                <a href="#" v-for="banner in banners" v-on:click="addBanner(banner)" class="list-group-item list-group-item-action">
+                                <a href="#" v-for="banner in banners" v-on:click="addItem(banner)" class="list-group-item list-group-item-action">
                                     {{ banner.name + " (" + banner.cost + " pts)" }}
                                 </a>
                             </div>
@@ -48,12 +47,11 @@
                                 <h3>Maniples</h3>
                             </a>
                             <div id="manipleCollapse" class="list-group collapse">
-                                <a href="#" v-for="maniple in maniples" v-on:click="addManiple(banner)" class="list-group-item list-group-item-action">
+                                <a href="#" v-for="maniple in maniples" v-on:click="addItem(maniple)" class="list-group-item list-group-item-action">
                                     {{ maniple.name + " (" + maniple.cost + " pts)" }}
                                 </a>
                             </div>
                         </div>
-
                     </div>
                     <div class="col-md-8">
                         <h2>List</h2>

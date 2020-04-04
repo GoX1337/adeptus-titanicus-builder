@@ -25,9 +25,9 @@ let loadVueApp = () => {
             }
         },
         methods: {
-            addTitan: function (titan) {
-                this.armyList.push({...titan});
-                this.total += titan.cost;
+            addItem: function (item) {
+                this.armyList.push({...item});
+                this.total += item.cost;
             },
             removeTitan: function (index, titan) {
                 this.armyList.splice(index, 1);
@@ -98,11 +98,6 @@ let loadVueApp = () => {
                 this.armyList.splice(index, 1, titan);
                 tooltipDispose();
             },
-            addBanner: function (banner) {
-               
-            },
-            addManiple: function (maniple) {
-            }
         },
         updated: function () {
             this.$nextTick(function () {
@@ -111,5 +106,4 @@ let loadVueApp = () => {
           }
     });
 
-   
 }
