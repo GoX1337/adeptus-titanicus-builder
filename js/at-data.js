@@ -305,4 +305,63 @@ const banners = [
         rightArm: null,
         leftArm: null
     }
-]
+];
+
+const maniples = [
+    {
+        name: "Audax Canis Light",
+        cost: 540
+    },
+    {
+        name: "Arcus Battlenine",
+        cost: 685
+    },
+    {
+        name: "Axiom Battleline",
+        cost: 815
+    },
+    {
+        name: "Corsair Battleline",
+        cost: 750
+    },
+    {
+        name: "Dominus Battleforce",
+        cost: 885
+    },
+    {
+        name: "Ferrox Light",
+        cost: 610
+    },
+    {
+        name: "Fortis Battle",
+        cost: 885
+    },
+    {
+        name: "Janissary Battleline",
+        cost: 610
+    },
+    {
+        name: "Lupercal Light",
+        cost: 540
+    },
+    {
+        name: "Mandatum Battleline",
+        cost: 745
+    },
+    {
+        name: "Myrmidon Battleline",
+        cost: 1020
+    },
+    {
+        name: "Regia Battleline",
+        cost: 950
+    },
+    {
+        name: "Ruptura Battleline",
+        cost: 900
+    },
+    {
+        name: "Veneator Light",
+        cost: 610
+    }
+];

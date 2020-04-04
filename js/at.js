@@ -16,6 +16,7 @@ let loadVueApp = () => {
             weapons: weapons,
             titans: titans,
             banners: banners,
+            maniples: maniples,
             weaponModal: {
                 titanIndex: -1,
                 title: "",
@@ -96,6 +97,11 @@ let loadVueApp = () => {
                 titan[titanWeaponAtt] = null;
                 this.armyList.splice(index, 1, titan);
                 tooltipDispose();
+            },
+            addBanner: function (banner) {
+               
+            },
+            addManiple: function (maniple) {
             }
         },
         updated: function () {
@@ -104,4 +110,6 @@ let loadVueApp = () => {
             });
           }
     });
+
+   
 }
