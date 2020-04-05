@@ -58,6 +58,19 @@ export default {
             this.total += value;
         }
     },
+    watch: {
+        armyList: {
+            handler() {
+                localStorage.setItem('armyList', JSON.stringify(this.armyList));
+            },
+            deep: true
+        },
+    },
+    mounted() {
+        if (localStorage.getItem('armyList')){
+            this.armyList = JSON.parse(localStorage.getItem('armyList'));
+        } 
+    },
     updated: function () {
         this.$nextTick(function () {
             $('[data-toggle="tooltip"]').tooltip();
