@@ -65,7 +65,7 @@ export default {
 <style scoped>
     .chevron {
         margin-left: auto;
-        margin-top: 8%; 
+        margin-top: 5%; 
         margin-right: 1%;
     }
     .link-menu {

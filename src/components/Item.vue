@@ -21,7 +21,7 @@
         </div>
         <div v-if="isTitan(item)" class="row">
             <div class="col"><h6 style="text-align: center;">Left Arm</h6></div>
-            <div class="col"><h6 style="text-align: center;">Carapace</h6></div>
+            <div class="col"><h6 v-if="hasCarapaceSlot(item)" style="text-align: center;">Carapace</h6></div>
             <div class="col"><h6 style="text-align: center;">Right Arm</h6></div>
         </div>
         <div v-if="isTitan(item)" class="row">
@@ -37,13 +37,13 @@
                 </a>
             </div>
             <div class="col" style="text-align: center;">
-                <div v-if="item.carapace">
+                <div v-if="hasCarapaceSlot(item) && item.carapace">
                     {{ item.carapace.name + " (" + item.carapace.cost + " pts)" }}
                     <a href="#" v-on:click="removeWeapon(index, 'carapace')" data-toggle="tooltip" data-placement="top" title="Remove weapon">
                         <img style="margin-top:1.5%;" src="../assets/x-circle.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
                     </a>
                 </div>
-                <a v-if="!item.carapace" href="#" v-on:click="openWeaponModal(index, item, 'carapace', 'carapace', 'Carapace')" data-toggle="tooltip" data-placement="top" title="Add weapon">
+                <a v-if="hasCarapaceSlot(item) && !item.carapace" href="#" v-on:click="openWeaponModal(index, item, 'carapace', 'carapace', 'Carapace')" data-toggle="tooltip" data-placement="top" title="Add weapon">
                     <img style="margin-top:1.5%;" src="../assets/plus.svg" width="15" height="15" class="d-inline-block align-top" alt=""/>
                 </a>
             </div>
@@ -85,6 +85,9 @@ export default {
     },
     isTitan (item){
         return item.type && ["warlord_sinister", "warlord", "warlord_nemesis", "reaver", "warhound"].includes(item.type);
+    },
+    hasCarapaceSlot (item){
+        return Object.prototype.hasOwnProperty.call(item, 'carapace'); 
     },
     removeItem(index, item) {
        this.$emit('removeItem', index, this.getTotalTitanCost(item));
