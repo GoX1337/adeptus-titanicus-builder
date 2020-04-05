@@ -65,10 +65,19 @@ export default {
             },
             deep: true
         },
+        total: {
+            handler() {
+                localStorage.setItem('total', JSON.stringify(this.total));
+            },
+            deep: true
+        }
     },
     mounted() {
         if (localStorage.getItem('armyList')){
             this.armyList = JSON.parse(localStorage.getItem('armyList'));
+        } 
+        if (localStorage.getItem('total')){
+            this.total = JSON.parse(localStorage.getItem('total'));
         } 
     },
     updated: function () {
