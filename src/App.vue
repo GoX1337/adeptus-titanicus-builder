@@ -53,12 +53,7 @@ export default {
             this.armyList.push({...item});
             this.total += item.cost;
         },
-        openWeaponModal (event) {
-            let index = event.index;
-            let titan = event.titan;
-            let weaponType = event.weaponType;
-            let titanWeaponAtt = event.titanWeaponAtt;
-            let modalTitle = event.modalTitle;
+        openWeaponModal (index, titan, weaponType, titanWeaponAtt, modalTitle) {
             this.weaponModal.titanIndex = index;
             this.weaponModal.title = modalTitle;
             this.weaponModal.titanWeaponAtt = titanWeaponAtt;
