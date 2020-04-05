@@ -283,84 +283,474 @@ const titans = [
 
 const banners = [
     {
-        name: "Acastus Knight",
-        type: "acastus_knight",
+        name: "Acastus Knight Banner",
         cost: 150,
-        rightArm: null,
-        leftArm: null
+        type: "banner",
+        composition : [
+            {
+                name: "Acastus Knight Lord Scion",
+                cost: 150,
+                type: "knight"
+            }
+        ]
     },
     {
-        name: "Cerastus Knight",
-        type: "cerastus_knight",
+        name: "Cerastus Knight Banner",
         cost: 130,
-        rightArm: null,
-        leftArm: null
+        type: "banner",
+        composition : [
+            {
+                name: "Cerastus Knight Lord Scion",
+                cost: 70,
+                type: "knight"
+            },
+            {
+                name: "Cerastus Knight Scion Martial",
+                cost: 60,
+                type: "knight"
+            }
+        ]
     },
     {
-        name: "Questoris Knight",
-        type: "questoris_knight",
+        name: "Questoris Knight Banner",
         cost: 120,
-        rightArm: null,
-        leftArm: null
+        type: "banner",
+        composition : [
+            {
+                name: "Questoris Knight Lord Scion",
+                cost: 50,
+                type: "knight"
+            },
+            {
+                name: "Questoris Knight Scion Martial",
+                cost: 35,
+                type: "knight"
+            },
+            {
+                name: "Questoris Knight Scion Martial",
+                cost: 35,
+                type: "knight"
+            }
+        ]
     }
 ];
 
 const maniples = [
     {
         name: "Audax Canis Light",
-        cost: 540
+        cost: 540,
+        type: "maniple",
+        composition: [
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ]
     },
     {
         name: "Arcus Battlenine",
-        cost: 685
+        cost: 685,
+        type: "maniple",
+        composition: [
+            {
+                name: "Warlord Nemesis",
+                type: "warlord_nemesis",
+                cost: 325,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ]
     },
     {
         name: "Axiom Battleline",
-        cost: 815
+        cost: 815,
+        type: "maniple",
+        composition: [
+            {
+                name: "Warlord",
+                type: "warlord",
+                cost: 385,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ]
     },
     {
         name: "Corsair Battleline",
-        cost: 750
+        cost: 750,
+        type: "maniple",
+        composition: [
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            }
+        ]
     },
     {
         name: "Dominus Battleforce",
-        cost: 885
+        cost: 885,
+        type: "maniple",
+        composition: [
+            {
+                name: "Warlord",
+                type: "warlord",
+                cost: 385,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            }
+        ]
     },
     {
         name: "Ferrox Light",
-        cost: 610
+        cost: 610,
+        type: "maniple",
+        composition: [
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ]
     },
     {
         name: "Fortis Battle",
-        cost: 885
+        cost: 885,
+        type: "maniple",
+        composition: [
+            {
+                name: "Warlord",
+                type: "warlord",
+                cost: 385,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            }
+        ]
     },
     {
         name: "Janissary Battleline",
-        cost: 610
+        cost: 610,
+        type: "maniple",
+        composition: [
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ]
     },
     {
         name: "Lupercal Light",
-        cost: 540
+        cost: 540,
+        type: "maniple",
+        composition: [
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ]
     },
     {
         name: "Mandatum Battleline",
-        cost: 745
+        cost: 745,
+        type: "maniple",
+        composition: [
+            {
+                name: "Warlord",
+                type: "warlord",
+                cost: 385,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ]
     },
     {
         name: "Myrmidon Battleline",
-        cost: 1020
+        cost: 1020,
+        type: "maniple",
+        composition: [
+            {
+                name: "Warlord",
+                type: "warlord",
+                cost: 385,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warlord",
+                type: "warlord",
+                cost: 385,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            }
+        ]
     },
     {
         name: "Regia Battleline",
-        cost: 950
+        cost: 950,
+        type: "maniple",
+        composition: [
+            {
+                name: "Warlord",
+                type: "warlord",
+                cost: 385,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warlord",
+                type: "warlord",
+                cost: 385,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ]
     },
     {
         name: "Ruptura Battleline",
-        cost: 900
+        cost: 900,
+        type: "maniple",
+        composition: [
+            {
+                name: "Warlord Nemesis",
+                type: "warlord_nemesis",
+                cost: 325,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warlord Nemesis",
+                type: "warlord_nemesis",
+                cost: 325,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            }
+        ]
     },
     {
         name: "Veneator Light",
-        cost: 610
+        cost: 610,
+        type: "maniple",
+        composition: [
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ]
     }
 ];
 
