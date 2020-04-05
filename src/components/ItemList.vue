@@ -25,7 +25,7 @@ let tooltipDispose = () => {
 }
 
 export default {
-    name: 'List',
+    name: 'ItemList',
     props: ['armyList'],
     components: {
         Item 
