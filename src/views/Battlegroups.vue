@@ -1,5 +1,5 @@
 <template>
   <div class="container-fluid" style="margin-top:2%;">
-    <h1>Battleforce lists</h1>
+    <h1>Battlegroups</h1>
   </div> 
 </template>

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Builder from '../views/Builder.vue'
-import List from '../views/List.vue'
+import Battlegroups from '../views/Battlegroups.vue'
 
 Vue.use(VueRouter)
 
@@ -12,9 +12,9 @@ Vue.use(VueRouter)
     component: Builder
   },
   {
-    path: '/list',
-    name: 'List',
-    component: List
+    path: '/battlegroups',
+    name: 'Battlegroups',
+    component: Battlegroups
   },
   {
     path: '/about',
