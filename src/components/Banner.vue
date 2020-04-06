@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div v-for="(knight, index) in banner.composition" :key="knight.name + index" class="card" style="background-color: #f2f2f2;">
+    <div v-for="(knight, index) in banner.composition" :key="knight.name + index" class="card" style="background-color: #fcfcfc;">
         <div class="card-header">
             <div class="row">
                 <div class="col-md-10">

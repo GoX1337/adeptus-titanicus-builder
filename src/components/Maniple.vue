@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div v-for="(titan, index) in maniple.composition" :key="titan.name + index" class="card" style="background-color: #f2f2f2;">
+    <div v-for="(titan, index) in maniple.composition" :key="titan.name + index" class="card" style="background-color: #fcfcfc;">
         <div class="card-header">
             <div class="row">
                 <div class="col-md-10">

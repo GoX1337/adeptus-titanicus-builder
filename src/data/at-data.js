@@ -367,10 +367,26 @@ const maniples = [
                 rightArm: null,
                 leftArm: null
             }
+        ],
+        optional: [
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
         ]
     },
     {
-        name: "Arcus Battlenine",
+        name: "Arcus Battleline",
         cost: 685,
         type: "maniple",
         composition: [
@@ -382,6 +398,22 @@ const maniples = [
                 leftArm: null,
                 carapace: null
             },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ],
+        optional: [
             {
                 name: "Warhound",
                 type: "warhound",
@@ -426,6 +458,23 @@ const maniples = [
                 rightArm: null,
                 leftArm: null
             }
+        ],
+        optional: [
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
         ]
     },
     {
@@ -441,6 +490,24 @@ const maniples = [
                 leftArm: null,
                 carapace: null
             },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            }
+        ],
+        optional: [
             {
                 name: "Reaver",
                 type: "reaver",
@@ -488,6 +555,23 @@ const maniples = [
                 leftArm: null,
                 carapace: null
             }
+        ],
+        optional: [
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+
         ]
     },
     {
@@ -517,6 +601,23 @@ const maniples = [
                 rightArm: null,
                 leftArm: null
             }
+        ],
+        optional: [
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
         ]
     },
     {
@@ -536,6 +637,24 @@ const maniples = [
                 name: "Reaver",
                 type: "reaver",
                 cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            }
+        ],
+        optional: [
+            {
+                name: "Warlord",
+                type: "warlord",
+                cost: 385,
                 rightArm: null,
                 leftArm: null,
                 carapace: null
@@ -577,6 +696,23 @@ const maniples = [
                 rightArm: null,
                 leftArm: null
             }
+        ],
+        optional: [
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
         ]
     },
     {
@@ -591,6 +727,22 @@ const maniples = [
                 rightArm: null,
                 leftArm: null
             },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ],
+        optional: [
             {
                 name: "Warhound",
                 type: "warhound",
@@ -634,6 +786,22 @@ const maniples = [
                 rightArm: null,
                 leftArm: null
             }
+        ],
+        optional: [
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
         ]
     },
     {
@@ -649,6 +817,24 @@ const maniples = [
                 leftArm: null,
                 carapace: null
             },
+            {
+                name: "Warlord",
+                type: "warlord",
+                cost: 385,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            }
+        ],
+        optional: [
             {
                 name: "Warlord",
                 type: "warlord",
@@ -695,6 +881,22 @@ const maniples = [
                 rightArm: null,
                 leftArm: null
             }
+        ],
+        optional: [
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
         ]
     },
     {
@@ -726,10 +928,28 @@ const maniples = [
                 leftArm: null,
                 carapace: null
             }
+        ],
+        optional: [
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            },
+            {
+                name: "Reaver",
+                type: "reaver",
+                cost: 250,
+                rightArm: null,
+                leftArm: null,
+                carapace: null
+            }
         ]
     },
     {
-        name: "Veneator Light",
+        name: "Venator Light",
         cost: 610,
         type: "maniple",
         composition: [
@@ -741,6 +961,22 @@ const maniples = [
                 leftArm: null,
                 carapace: null
             },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            },
+            {
+                name: "Warhound",
+                type: "warhound",
+                cost: 180,
+                rightArm: null,
+                leftArm: null
+            }
+        ],
+        optional: [
             {
                 name: "Warhound",
                 type: "warhound",
