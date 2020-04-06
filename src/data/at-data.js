@@ -242,7 +242,8 @@ const weapons = {
 const titans = [
     {
         name: "Warlord-Sinister",
-        type: "warlord_sinister",
+        id: "warlord_sinister",
+        type: "titan",
         cost: 685,
         rightArm: null,
         leftArm: null,
@@ -250,7 +251,8 @@ const titans = [
     },
     {
         name: "Warlord",
-        type: "warlord",
+        id: "warlord",
+        type: "titan",
         cost: 385,
         rightArm: null,
         leftArm: null,
@@ -258,7 +260,8 @@ const titans = [
     },
     {
         name: "Warlord Nemesis",
-        type: "warlord_nemesis",
+        id: "warlord_nemesis",
+        type: "titan",
         cost: 325,
         rightArm: null,
         leftArm: null,
@@ -266,7 +269,8 @@ const titans = [
     },
     {
         name: "Reaver",
-        type: "reaver",
+        id: "reaver",
+        type: "titan",
         cost: 250,
         rightArm: null,
         leftArm: null,
@@ -274,7 +278,8 @@ const titans = [
     },
     {
         name: "Warhound",
-        type: "warhound",
+        id: "warhound",
+        type: "titan",
         cost: 180,
         rightArm: null,
         leftArm: null

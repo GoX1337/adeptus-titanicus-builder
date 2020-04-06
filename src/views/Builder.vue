@@ -49,8 +49,8 @@ export default {
             this.weaponModal.titanIndex = index;
             this.weaponModal.title = modalTitle;
             this.weaponModal.titanWeaponAtt = titanWeaponAtt;
-            if(this.weapons[titan.type]){
-                this.weaponModal.weapons = {...this.weapons[titan.type][weaponType]};
+            if(this.weapons[titan.id]){
+                this.weaponModal.weapons = {...this.weapons[titan.id][weaponType]};
                 $('#weaponModal').modal('toggle');
             }
         },

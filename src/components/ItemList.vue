@@ -1,16 +1,14 @@
 <template>
     <div class="col-md-8">
         <h2>List</h2>
-        <div v-for="(item, index) in armyList" :key="item.name + index" class="card" style="background-color: #f2f2f2;">
-            <Item v-bind:item="item" v-bind:index="index"
-                    @openModal="openWeaponModal"
-                    @removeItem="removeItem"
-                    @moveTopItem="moveTopItem"
-                    @moveDownItem="moveDownItem"
-                    @cloneItem="cloneItem"
-                    @removeWeapon="removeWeapon">
-            </Item>
-        </div>
+        <Item v-for="(item, index) in armyList" :key="item.name + index"  v-bind:item="item" v-bind:index="index"
+                @openModal="openWeaponModal"
+                @removeItem="removeItem"
+                @moveTopItem="moveTopItem"
+                @moveDownItem="moveDownItem"
+                @cloneItem="cloneItem"
+                @removeWeapon="removeWeapon">
+        </Item>
     </div>
 </template>
 
