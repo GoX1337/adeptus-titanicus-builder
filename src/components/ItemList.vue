@@ -52,10 +52,10 @@ export default {
             }
             $('[data-toggle="tooltip"]').tooltip();
         },
-        cloneItem (index, item) {
+        cloneItem (index, item, cost) {
             this.armyList.splice(index + 1, 0, {...item});
-            this.total += item.cost;
-            this.$emit('updateTotal', item.cost);
+            this.total += cost;
+            this.$emit('updateTotal', cost);
             tooltipDispose();
         },
         openWeaponModal (index, titan, weaponType, titanWeaponAtt, modalTitle) {

@@ -4,7 +4,7 @@
         <div class="card-header">
             <div class="row">
                 <div class="col-md-10">
-                    <h5>{{ item.name + " (" + getTotalTitanCost(item) + " pts)" }}</h5>
+                    <h5>{{ item.name + " (" + getTotalItemCost(item) + " pts)" }}</h5>
                 </div>
                 <div class="col-md-2">
                     <a href="#" v-on:click="moveTopItem(index, item)" data-toggle="tooltip" data-placement="top" title="Move top">
@@ -44,7 +44,7 @@ export default {
         Titan, Banner, Maniple
   },
   methods: {
-     getTotalTitanCost (item) {
+     getTotalItemCost (item) {
         let total = item.cost;
         if(this.isTitan(item)){
             if(item.rightArm){
@@ -72,7 +72,7 @@ export default {
         return Object.prototype.hasOwnProperty.call(item, 'carapace'); 
     },
     removeItem(index, item) {
-       this.$emit('removeItem', index, this.getTotalTitanCost(item));
+       this.$emit('removeItem', index, this.getTotalItemCost(item));
     },
     moveTopItem (index, item) {
         this.$emit('moveTopItem', index, item);
@@ -81,7 +81,7 @@ export default {
         this.$emit('moveDownItem', index, item);
     },
     cloneItem (index, item) {
-        this.$emit('cloneItem', index, item);
+        this.$emit('cloneItem', index, item, this.getTotalItemCost(item));
     },
     openWeaponModal (index, titan, weaponType, titanWeaponAtt, modalTitle) {
        this.$emit('openModal', index, titan, weaponType, titanWeaponAtt, modalTitle);
