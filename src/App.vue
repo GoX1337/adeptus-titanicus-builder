@@ -17,8 +17,87 @@
             <router-link class="nav-link" to="/about">About</router-link>
           </li>
         </ul>
+        <form class="form-inline">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <h5 v-if="name" class="name">{{name}}</h5>
+            </li>
+            <li v-if="!name" class="nav-item">
+              <a class="nav-link" href="#" v-on:click="loginOpenModal">Login</a>
+            </li>
+          </ul>
+        </form>
       </div>
     </nav>
     <router-view />
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                      <a style="margin-left: 40%;" href="#" v-on:click="loginGoogle()" data-toggle="tooltip" data-placement="top" title="Login using Gmail">
+                        <img src="./assets/gmail.png" width="100" height="100" class="d-inline-block align-top" alt=""/>
+                      </a>
+                  </div>
+                  <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
+                     <a style="margin-left: 40%;" href="#" v-on:click="loginFacebook()" data-toggle="tooltip" data-placement="top" title="Login using Facebook">
+                        <img src="./assets/fb.png" width="100" height="100" class="d-inline-block align-top" alt=""/>
+                     </a>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
   </div>
 </template>
+
+<script>
+
+import axios from 'axios';
+const $ = window.$;
+
+export default {
+    name: 'App',
+    data(){
+      return {
+        name: null
+      }
+    },
+    methods : {
+      loginOpenModal () {
+        $('#loginModal').modal('toggle');
+      },
+      loginGoogle () {
+         $('#loginModal').modal('toggle');
+      },
+      loginFacebook () {
+        $('#loginModal').modal('toggle');
+        axios  
+          .get('/auth/facebook')
+          .then(response => {
+            this.info = response
+            console.log(response);
+          });
+      }
+    }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+
+.name {
+  color: white; 
+  font-size: 1.25rem; 
+  font-weight: 400; 
+  padding-top: .3125rem; 
+  padding-bottom: .3125rem;
+}
+
+</style>
