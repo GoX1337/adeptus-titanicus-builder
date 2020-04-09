@@ -20,10 +20,13 @@
         <form class="form-inline">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <h5 v-if="name" class="name">{{name}}</h5>
+              <h5 v-if="user && user.displayName" class="name">{{user.displayName}}</h5>
             </li>
-            <li v-if="!name" class="nav-item">
+            <li v-if="!user || !user.displayName" class="nav-item">
               <a class="nav-link" href="#" v-on:click="loginOpenModal">Login</a>
+            </li>
+            <li v-if="user && user.displayName" class="nav-item">
+              <a class="nav-link" href="http://localhost:8080/logout">Logout</a>
             </li>
           </ul>
         </form>
@@ -46,7 +49,7 @@
                       </a>
                   </div>
                   <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
-                     <a style="margin-left: 40%;" href="#" v-on:click="loginFacebook()" data-toggle="tooltip" data-placement="top" title="Login using Facebook">
+                     <a style="margin-left: 40%;" href="http://localhost:8080/auth/facebook" data-toggle="tooltip" data-placement="top" title="Login using Facebook">
                         <img src="./assets/fb.png" width="100" height="100" class="d-inline-block align-top" alt=""/>
                      </a>
                   </div>
@@ -59,33 +62,30 @@
 
 <script>
 
-import axios from 'axios';
 const $ = window.$;
+import axios from 'axios';
 
 export default {
     name: 'App',
     data(){
       return {
-        name: null
+        user: null
       }
     },
     methods : {
       loginOpenModal () {
         $('#loginModal').modal('toggle');
-      },
-      loginGoogle () {
-         $('#loginModal').modal('toggle');
-      },
-      loginFacebook () {
-        $('#loginModal').modal('toggle');
-        axios  
-          .get('/auth/facebook')
-          .then(response => {
-            this.info = response
-            console.log(response);
-          });
       }
-    }
+    },
+    mounted () {
+      axios
+        .get('http://localhost:8080/profile', { withCredentials: true })
+        .then(response => {
+          console.log("/profile", response.data.displayName);
+          this.user = response.data;
+        })
+        .catch(err => { console.error(err)});
+  }
 }
 </script>
 
