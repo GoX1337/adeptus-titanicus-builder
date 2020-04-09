@@ -3,7 +3,7 @@
         <div class="row">
             <Menu @chooseItem="addItem"></Menu>
             <ItemList v-bind:armyList="armyList" @openModal="openWeaponModal" @updateTotal="updateTotal"></ItemList>
-            <Total v-bind:total="total"></Total>
+            <Total v-bind:total="total" v-bind:toSave="toSave" @listSaved="listSaved"></Total>
         </div>
         <Modal v-bind:weaponModal="weaponModal" v-bind:armyList="armyList" @updateTotal="updateTotal"></Modal>
     </div> 
@@ -37,7 +37,8 @@ export default {
                 title: "",
                 titanWeaponAtt: "",
                 weapons: []
-            }
+            },
+            toSave: false,
         }
     },
     methods: {
@@ -56,18 +57,23 @@ export default {
         },
         updateTotal (value){
             this.total += value;
+        },
+        listSaved () {
+            this.toSave = false;
         }
     },
     watch: {
         armyList: {
             handler() {
                 localStorage.setItem('armyList', JSON.stringify(this.armyList));
+                this.toSave = true;
             },
             deep: true
         },
         total: {
             handler() {
-                localStorage.setItem('total', JSON.stringify(this.total));
+                localStorage.setItem('total', this.total);
+                this.toSave = true;
             },
             deep: true
         }
@@ -77,7 +83,7 @@ export default {
             this.armyList = JSON.parse(localStorage.getItem('armyList'));
         } 
         if (localStorage.getItem('total')){
-            this.total = JSON.parse(localStorage.getItem('total'));
+            this.total = localStorage.getItem('total');
         } 
     },
     updated: function () {
