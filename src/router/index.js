@@ -8,6 +8,11 @@ Vue.use(VueRouter)
   const routes = [
   {
     path: '/',
+    redirect: '/builder',
+  },
+  {
+    path: '/builder/:battlegroupId?',
+    props: true,
     name: 'Builder',
     component: Builder
   },

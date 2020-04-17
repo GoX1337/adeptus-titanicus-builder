@@ -1,6 +1,18 @@
 <template>
     <div class="col-md-8">
-        <h2>List</h2>
+        <div class="row">
+            <div class="col">
+                <h2>List</h2>
+            </div>
+            <div class="col">
+                <div class="input-group-prepend">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+                    </div>
+                    <input v-model="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                </div>
+            </div>
+        </div>
         <Item v-for="(item, index) in armyList" :key="item.name + index"  v-bind:item="item" v-bind:index="index"
                 @openModal="openWeaponModal"
                 @removeItem="removeItem"
@@ -24,7 +36,7 @@ let tooltipDispose = () => {
 
 export default {
     name: 'ItemList',
-    props: ['armyList'],
+    props: ['armyList', 'name'],
     components: {
         Item 
     },

@@ -2,7 +2,7 @@
     <div class="container-fluid" style="margin-top:2%;">
         <div class="row">
             <Menu @chooseItem="addItem"></Menu>
-            <ItemList v-bind:armyList="armyList" @openModal="openWeaponModal" @updateTotal="updateTotal"></ItemList>
+            <ItemList v-bind:name="name" v-bind:armyList="armyList" @openModal="openWeaponModal" @updateTotal="updateTotal"></ItemList>
             <Total v-bind:total="total" v-bind:toSave="toSave" @listSaved="listSaved"></Total>
         </div>
         <Modal v-bind:weaponModal="weaponModal" v-bind:armyList="armyList" @updateTotal="updateTotal"></Modal>
@@ -19,15 +19,19 @@ import Modal from '@/components/Modal.vue';
 
 const $ = window.$;
 
+import axios from 'axios';
+
 export default {
     name: 'Builder',
     components: {
         Menu, Total, ItemList, Modal
     },
+    props: ['battlegroupId'],
     data() {
         return {
             total: 0,
             armyList: [],
+            name: "Unnamed battleforce",
             weapons: atdata.weapons,
             titans: atdata.titans,
             banners: atdata.banners,
@@ -38,7 +42,7 @@ export default {
                 titanWeaponAtt: "",
                 weapons: []
             },
-            toSave: false,
+            toSave: false
         }
     },
     methods: {
@@ -76,15 +80,42 @@ export default {
                 this.toSave = true;
             },
             deep: true
+        },
+        name: {
+            handler() {
+                localStorage.setItem('name', this.name);
+                this.toSave = true;
+            },
+            deep: true
         }
     },
     mounted() {
-        if (localStorage.getItem('armyList')){
+        if(!this.battlegroupId){
+            if (localStorage.getItem('armyList')){
             this.armyList = JSON.parse(localStorage.getItem('armyList'));
-        } 
-        if (localStorage.getItem('total')){
-            this.total = localStorage.getItem('total');
-        } 
+            } 
+            if (localStorage.getItem('total')){
+                this.total = parseInt(localStorage.getItem('total'));
+            } 
+             if (localStorage.getItem('name')){
+                this.name = localStorage.getItem('name');
+            } 
+            return;
+        }
+
+        axios
+            .get('/api/battlegroup/' + this.battlegroupId,  {
+              withCredentials: true
+            })
+            .then(response => {
+                if(response.data){
+                    this.armyList = response.data.list;
+                    this.total = response.data.total;
+                    this.name = response.data.name;
+                    this.toSave = false;
+                }
+            })
+            .catch(err => { console.error(err)});
     },
     updated: function () {
         this.$nextTick(function () {

@@ -1,10 +1,10 @@
 <template>
-    <div class="col-sm-2 total">
-        <h2 style="">Total {{ total }} pts</h2>
-        <a v-if="toSave" href="#" v-on:click="saveBattlegroup()" data-toggle="tooltip" data-placement="top" title="Save battlegroup">
-            <img src="../assets/download.svg" width="30" height="30" class="d-inline-block align-top" alt=""/> 
-        </a>
-    </div>
+<div class="col-sm-2 total">
+    <h2>Total {{ total }} pts</h2>
+    <a v-if="toSave" href="#" v-on:click="saveBattlegroup()" data-toggle="tooltip" data-placement="top" title="Save battlegroup">
+        <img src="../assets/download.svg" width="30" height="30" class="d-inline-block align-top" alt=""/> 
+    </a>
+</div>
 </template>
 
 <script>
@@ -22,9 +22,9 @@ export default {
     props: ['total', 'toSave'],
     methods: {
         saveBattlegroup() {
-            axios.post('http://localhost:8080/battlegroup', 
+            axios.post('/api/battlegroup', 
             {
-                name: 'gox-Battleforce',
+                name: localStorage.getItem('name'),
                 list: JSON.parse(localStorage.getItem('armyList')),
                 total: localStorage.getItem('total') ? parseInt(localStorage.getItem('total')) : 0
             }, 

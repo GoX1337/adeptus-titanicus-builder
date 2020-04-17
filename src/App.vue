@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <router-link class="nav-link" to="/">Builder</router-link>
+            <router-link class="nav-link" to="/builder">Builder</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/battlegroups">Battlegroups</router-link>
@@ -44,8 +44,8 @@
                 </div>
                 <div class="modal-body">
                   <div class="row">
-                      <a style="margin-left: 40%;" href="#" v-on:click="loginGoogle()" data-toggle="tooltip" data-placement="top" title="Login using Gmail">
-                        <img src="./assets/gmail.png" width="100" height="100" class="d-inline-block align-top" alt=""/>
+                      <a style="margin-left: 40%;" href="http://localhost:8080/auth/google" data-toggle="tooltip" data-placement="top" title="Login using Google">
+                        <img src="./assets/google.png" width="100" height="100" class="d-inline-block align-top" alt=""/>
                       </a>
                   </div>
                   <div class="row" style="margin-top: 5%; margin-bottom: 5%;">
@@ -79,7 +79,7 @@ export default {
     },
     mounted () {
       axios
-        .get('http://localhost:8080/profile', { withCredentials: true })
+        .get('/profile', { withCredentials: true })
         .then(response => {
           console.log("/profile", response.data.displayName);
           this.user = response.data;
