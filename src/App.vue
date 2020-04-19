@@ -10,7 +10,7 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/builder">Builder</router-link>
           </li>
-          <li class="nav-item">
+          <li v-if="user" class="nav-item">
             <router-link class="nav-link" to="/battlegroups">Battlegroups</router-link>
           </li>
           <li class="nav-item">
@@ -84,7 +84,7 @@ export default {
           console.log("/profile", response.data.displayName);
           this.user = response.data;
         })
-        .catch(err => { console.error(err)});
+        .catch(() => {});
   }
 }
 </script>
