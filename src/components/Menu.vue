@@ -69,18 +69,12 @@ export default {
         if(menu == "titan"){
             this.titanMenu = !this.titanMenu;
             this.titanChevronImage = this.titanMenu ? require("../assets/chevron-down.svg") : require("../assets/chevron-right.svg");
-            this.bannerMenu = false;
-            this.manipleMenu = false;
         } else if(menu == "banner"){
             this.bannerMenu = !this.bannerMenu;
             this.bannerChevronImage = this.bannerMenu ? require("../assets/chevron-down.svg") : require("../assets/chevron-right.svg");
-            this.titanMenu = false;
-            this.manipleMenu = false;
         } else if(menu == "maniple"){
             this.manipleMenu = !this.manipleMenu;
             this.manipleChevronImage = this.manipleMenu ? require("../assets/chevron-down.svg") : require("../assets/chevron-right.svg");
-            this.titanMenu = false;
-            this.bannerMenu = false;
         }
       }
   }
